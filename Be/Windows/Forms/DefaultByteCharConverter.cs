@@ -1,0 +1,17 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: Be.Windows.Forms.DefaultByteCharConverter
+// Assembly: SWPS4MAX, Version=1.0.7646.26709, Culture=neutral, PublicKeyToken=null
+// MVID: 185BF9ED-B762-4AE8-B9E6-BAC5BF775B8B
+// Assembly location: C:\Program Files (x86)\DataPower\Save Wizard for PS4 MAX\SWPS4MAX.exe
+
+namespace Be.Windows.Forms
+{
+  public class DefaultByteCharConverter : IByteCharConverter
+  {
+    public char ToChar(byte b) => b <= (byte) 31 || b > (byte) 126 && b < (byte) 160 ? '.' : (char) b;
+
+    public byte ToByte(char c) => (byte) c;
+
+    public override string ToString() => "Default";
+  }
+}
